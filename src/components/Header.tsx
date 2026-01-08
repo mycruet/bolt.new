@@ -11,13 +11,7 @@ interface HeaderProps {
 export default function Header({ onAccountInfoClick, activeMenu, onMenuClick }: HeaderProps) {
   const [showUserMenu, setShowUserMenu] = useState(false);
 
-  const menuItems = [
-    { label: '我的消息', key: '我的消息' },
-    { label: '我的待办', key: '我的待办' },
-    { label: '我的发起', key: '我的发起' },
-    { label: '我的看板', key: '我的看板' },
-    { label: '我的应用', key: '我的应用' },
-  ];
+  const menuItems = ['工作台', '应用管理', '企业管理', '系统管理'];
 
   const handleAccountInfo = () => {
     onAccountInfoClick();
@@ -38,18 +32,18 @@ export default function Header({ onAccountInfoClick, activeMenu, onMenuClick }: 
           <nav className="hidden md:flex items-center gap-8">
             {menuItems.map((item) => (
               <button
-                key={item.key}
-                onClick={() => onMenuClick(item.key)}
+                key={item}
+                onClick={() => onMenuClick(item)}
                 className={`font-medium transition-colors duration-200 relative group ${
-                  activeMenu === item.key
+                  activeMenu === item
                     ? 'text-blue-600'
                     : 'text-slate-600 hover:text-blue-600'
                 }`}
               >
-                {item.label}
+                {item}
                 <span
                   className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 transition-all duration-300 ${
-                    activeMenu === item.key ? 'w-full' : 'w-0 group-hover:w-full'
+                    activeMenu === item ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 ></span>
               </button>
