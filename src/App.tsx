@@ -2,13 +2,12 @@ import { useState } from 'react';
 import { Cpu, Lock, User, Waves } from 'lucide-react';
 import Header from './components/Header';
 import AccountInfoPanel from './components/AccountInfoPanel';
-import Dashboard from './components/Dashboard';
 import ComingSoon from './components/ComingSoon';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showAccountPanel, setShowAccountPanel] = useState(false);
-  const [activeMenu, setActiveMenu] = useState('工作台');
+  const [activeMenu, setActiveMenu] = useState('我的消息');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({ username: '', password: '' });
@@ -50,16 +49,18 @@ function App() {
 
   const renderContent = () => {
     switch (activeMenu) {
-      case '工作台':
-        return <Dashboard />;
-      case '应用管理':
-        return <ComingSoon title="应用管理待上线" />;
-      case '企业管理':
-        return <ComingSoon title="企业管理待上线" />;
-      case '系统管理':
-        return <ComingSoon title="系统管理待上线" />;
+      case '我的消息':
+        return <ComingSoon title="我的消息待上线" />;
+      case '我的待办':
+        return <ComingSoon title="我的待办待上线" />;
+      case '我的发起':
+        return <ComingSoon title="我的发起待上线" />;
+      case '我的看板':
+        return <ComingSoon title="我的看板待上线" />;
+      case '我的应用':
+        return <ComingSoon title="我的应用待上线" />;
       default:
-        return <Dashboard />;
+        return <ComingSoon title="我的消息待上线" />;
     }
   };
 
