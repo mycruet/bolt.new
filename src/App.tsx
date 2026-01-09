@@ -4,6 +4,7 @@ import Header from './components/Header';
 import AccountInfoPanel from './components/AccountInfoPanel';
 import Dashboard from './components/Dashboard';
 import SystemManagement from './components/SystemManagement';
+import EnterpriseManagement from './components/EnterpriseManagement';
 import ComingSoon from './components/ComingSoon';
 
 function App() {
@@ -56,7 +57,7 @@ function App() {
       case '应用管理':
         return <ComingSoon title="应用管理待上线" />;
       case '企业管理':
-        return <ComingSoon title="企业管理待上线" />;
+        return <EnterpriseManagement />;
       case '系统管理':
         return <SystemManagement />;
       default:
