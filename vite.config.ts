@@ -8,4 +8,8 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   base: '/Sharp_toolsOnBoltNEW/',
+  build: {
+    outDir: 'docs', // 指定输出文件夹为docs
+  },
+
 });
